@@ -12,7 +12,7 @@ export default function HomePage() {
     setLoading(true);
     const formData = new FormData(e.target);
 
-    const response = await fetch('http://127.0.0.1:5000/', {
+    const response = await fetch('https://marops-backend-f5002c4af087.herokuapp.com/', {
       method: 'POST',
       body: formData,
     });
@@ -23,7 +23,7 @@ export default function HomePage() {
   };
 
   const downloadFile = async (filename, label) => {
-    const response = await fetch(`http://127.0.0.1:5000/download/${filename}`);
+    const response = await fetch(`https://marops-backend-f5002c4af087.herokuapp.com/download/${filename}`);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
